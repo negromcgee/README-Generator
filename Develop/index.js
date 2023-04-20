@@ -26,7 +26,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeReadmeFile(README, , filename = 'README.md') {
+function writeReadmeFile(README, filename = 'README.md') {
     const content = `# ${title}
   
   ${description}`;
@@ -37,7 +37,11 @@ function writeReadmeFile(README, , filename = 'README.md') {
     });
   }
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    promptUser().then((data) => {
+        writeFile(data);
+    });
+}
 
 // Function call to initialize app
 init();
